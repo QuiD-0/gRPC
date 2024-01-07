@@ -1,0 +1,29 @@
+# Default ignored files
+/shelf/
+/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+
+.idea
+*.iml
+*.ipr
+*.iws
+out/
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+*.kotlin_builtins
+*.kotlin_module
+
+#gradle
+.gradle
+build/
