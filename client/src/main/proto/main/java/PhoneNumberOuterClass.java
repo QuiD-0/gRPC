@@ -27,17 +27,6 @@ public final class PhoneNumberOuterClass {
      */
     com.google.protobuf.ByteString
         getNumberBytes();
-
-    /**
-     * <code>.PhoneType type = 2;</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    int getTypeValue();
-    /**
-     * <code>.PhoneType type = 2;</code>
-     * @return The type.
-     */
-    PhoneTypeOuterClass.PhoneType getType();
   }
   /**
    * Protobuf type {@code PhoneNumber}
@@ -53,7 +42,6 @@ public final class PhoneNumberOuterClass {
     }
     private PhoneNumber() {
       number_ = "";
-      type_ = 0;
     }
 
     @java.lang.Override
@@ -115,24 +103,6 @@ public final class PhoneNumberOuterClass {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 2;
-    private int type_ = 0;
-    /**
-     * <code>.PhoneType type = 2;</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <code>.PhoneType type = 2;</code>
-     * @return The type.
-     */
-    @java.lang.Override public PhoneTypeOuterClass.PhoneType getType() {
-      PhoneTypeOuterClass.PhoneType result = PhoneTypeOuterClass.PhoneType.forNumber(type_);
-      return result == null ? PhoneTypeOuterClass.PhoneType.UNRECOGNIZED : result;
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -150,9 +120,6 @@ public final class PhoneNumberOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, number_);
       }
-      if (type_ != PhoneTypeOuterClass.PhoneType.MOBILE.getNumber()) {
-        output.writeEnum(2, type_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -164,10 +131,6 @@ public final class PhoneNumberOuterClass {
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, number_);
-      }
-      if (type_ != PhoneTypeOuterClass.PhoneType.MOBILE.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(2, type_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -186,7 +149,6 @@ public final class PhoneNumberOuterClass {
 
       if (!getNumber()
           .equals(other.getNumber())) return false;
-      if (type_ != other.type_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -200,8 +162,6 @@ public final class PhoneNumberOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getNumber().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -334,7 +294,6 @@ public final class PhoneNumberOuterClass {
         super.clear();
         bitField0_ = 0;
         number_ = "";
-        type_ = 0;
         return this;
       }
 
@@ -370,9 +329,6 @@ public final class PhoneNumberOuterClass {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.number_ = number_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.type_ = type_;
         }
       }
 
@@ -425,9 +381,6 @@ public final class PhoneNumberOuterClass {
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
-        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -459,11 +412,6 @@ public final class PhoneNumberOuterClass {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 16: {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -552,59 +500,6 @@ public final class PhoneNumberOuterClass {
         onChanged();
         return this;
       }
-
-      private int type_ = 0;
-      /**
-       * <code>.PhoneType type = 2;</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <code>.PhoneType type = 2;</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        type_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.PhoneType type = 2;</code>
-       * @return The type.
-       */
-      @java.lang.Override
-      public PhoneTypeOuterClass.PhoneType getType() {
-        PhoneTypeOuterClass.PhoneType result = PhoneTypeOuterClass.PhoneType.forNumber(type_);
-        return result == null ? PhoneTypeOuterClass.PhoneType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.PhoneType type = 2;</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setType(PhoneTypeOuterClass.PhoneType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000002;
-        type_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.PhoneType type = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        type_ = 0;
-        onChanged();
-        return this;
-      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -683,22 +578,19 @@ public final class PhoneNumberOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021PhoneNumber.proto\032\017PhoneType.proto\"7\n\013" +
-      "PhoneNumber\022\016\n\006number\030\001 \001(\t\022\030\n\004type\030\002 \001(" +
-      "\0162\n.PhoneTypeb\006proto3"
+      "\n\021PhoneNumber.proto\"\035\n\013PhoneNumber\022\016\n\006nu" +
+      "mber\030\001 \001(\tb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          PhoneTypeOuterClass.getDescriptor(),
         });
     internal_static_PhoneNumber_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_PhoneNumber_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PhoneNumber_descriptor,
-        new java.lang.String[] { "Number", "Type", });
-    PhoneTypeOuterClass.getDescriptor();
+        new java.lang.String[] { "Number", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
