@@ -37,7 +37,7 @@ protobuf {
     protoc {
         artifact = "com.google.protobuf:protoc:${protobufVersion}"
     }
-    generatedFilesBaseDir = "$projectDir/src/generated"
+    generatedFilesBaseDir = "$rootDir/../server/src/main/proto"
     clean {
         delete generatedFilesBaseDir
     }
