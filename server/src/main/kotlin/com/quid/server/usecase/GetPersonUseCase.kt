@@ -1,4 +1,4 @@
-package com.quid.server
+package com.quid.server.usecase
 
 import GetPersonUseCaseGrpc.GetPersonUseCaseImplBase
 import PersonOuterClass.Person
@@ -14,16 +14,13 @@ class GetPersonUseCase : GetPersonUseCaseImplBase() {
     override fun getPerson(request: PersonGetRequest, responseObserver: StreamObserver<Person>) {
         val person = Person.newBuilder()
             .setId(1)
-            .setName("John Doe")
+            .setName("QuiD")
             .setEmail("test@mail.com")
-            .setPhones(
-                0,
+            .addPhones(
                 PhoneNumber.newBuilder()
                     .setNumber("123456789")
-                    .setType(PhoneType.MOBILE)
                     .build()
-            )
-            .build()
+            ).build()
 
         responseObserver.onNext(person)
         responseObserver.onCompleted()
