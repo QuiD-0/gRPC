@@ -1,0 +1,10 @@
+syntax = "proto3";
+import "person.proto";
+
+service GetPersonUseCase {
+    rpc getPerson (PersonGetRequest) returns (Person);
+}
+
+message PersonGetRequest {
+    string id = 1;
+}

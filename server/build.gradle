@@ -46,6 +46,7 @@ sourceSets {
     main {
         java {
             srcDirs("src/main/proto/main/java")
+            srcDirs("src/main/proto/main/grpc")
         }
     }
 }

@@ -1,32 +1,18 @@
 package com.quid.server.gateway.rpc
 
+import GetPersonUseCaseGrpc
 import PersonOuterClass.Person
-import PhoneNumberOuterClass.PhoneNumber
-import PhoneTypeOuterClass.PhoneType
+import PersonService.PersonGetRequest
+import com.quid.server.GetPersonUseCase
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
 
 @GrpcService
-class PersonApiController {
+class PersonApiController(
+    private val getPersonUseCase: GetPersonUseCase
+) : GetPersonUseCaseGrpc.GetPersonUseCaseImplBase() {
 
-    fun getPerson(id: Int, response: StreamObserver<Person>) {
-        response.onNext(
-            getPerson(id)
-        )
-        response.onCompleted()
+    override fun getPerson(request: PersonGetRequest, responseObserver: StreamObserver<Person>) {
+        getPersonUseCase.getPerson(request, responseObserver)
     }
-
-    private fun getPerson(id: Int): Person =
-        Person.newBuilder()
-            .setId(id)
-            .setName("Person $id")
-            .setEmail("test@mail.com")
-            .setPhones(
-                1,
-                PhoneNumber.newBuilder()
-                    .setNumber("123456789")
-                    .setType(PhoneType.MOBILE)
-                    .build()
-            )
-            .build()
 }
