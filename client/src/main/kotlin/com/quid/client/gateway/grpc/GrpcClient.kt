@@ -1,7 +1,6 @@
 package com.quid.client.gateway.grpc
 
 import GetPersonUseCaseGrpc
-import PersonOuterClass.Person
 import PersonService
 import net.devh.boot.grpc.client.inject.GrpcClient
 import org.springframework.stereotype.Component
