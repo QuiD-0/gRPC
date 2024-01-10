@@ -1,4 +1,5 @@
 syntax = "proto3";
+import "person.proto";
 
 service GetPersonUseCase {
     rpc getPerson (PersonGetRequest) returns (Person);
@@ -6,15 +7,4 @@ service GetPersonUseCase {
 
 message PersonGetRequest {
     string id = 1;
-}
-
-message Person {
-    string name = 1;
-    int32 id = 2;
-    string email = 3;
-    repeated PhoneNumber phones = 4;
-}
-
-message PhoneNumber {
-    string number = 1;
 }
