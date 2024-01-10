@@ -1,8 +1,10 @@
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
+import jakarta.annotation.Generated;
+
 /**
  */
-@javax.annotation.Generated(
+@Generated(
     value = "by gRPC proto compiler (version 1.58.0)",
     comments = "Source: personService.proto")
 @io.grpc.stub.annotations.GrpcGenerated
