@@ -1,9 +1,9 @@
-package com.quid.server.gateway.grpc
+package com.quid.server.person.gateway.grpc
 
 import GetPersonUseCaseGrpc
 import PersonService
 import PersonService.PersonProto
-import com.quid.server.usecase.GetPersonUseCase
+import com.quid.server.person.usecase.GetPersonUseCase
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
 
