@@ -8,7 +8,7 @@ import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
 
 @GrpcService
-class PersonApiController(
+class PersonGrpcController(
     private val getPersonUseCase: GetPersonUseCase
 ) : GetPersonUseCaseGrpc.GetPersonUseCaseImplBase() {
 

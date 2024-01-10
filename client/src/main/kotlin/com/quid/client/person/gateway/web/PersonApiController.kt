@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/person")
-class PersonCallController(
+class PersonApiController(
     private val personGrpcClient: PersonGrpcClient
 ) {
 
