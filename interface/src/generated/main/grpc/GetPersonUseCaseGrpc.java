@@ -1,10 +1,8 @@
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
-import jakarta.annotation.Generated;
-
 /**
  */
-@Generated(
+@javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.58.0)",
     comments = "Source: personService.proto")
 @io.grpc.stub.annotations.GrpcGenerated
@@ -44,6 +42,37 @@ public final class GetPersonUseCaseGrpc {
       }
     }
     return getGetPersonMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
+      PersonService.PersonProto> getGetPersonByIdMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getPersonById",
+      requestType = PersonService.PersonGetRequest.class,
+      responseType = PersonService.PersonProto.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
+      PersonService.PersonProto> getGetPersonByIdMethod() {
+    io.grpc.MethodDescriptor<PersonService.PersonGetRequest, PersonService.PersonProto> getGetPersonByIdMethod;
+    if ((getGetPersonByIdMethod = GetPersonUseCaseGrpc.getGetPersonByIdMethod) == null) {
+      synchronized (GetPersonUseCaseGrpc.class) {
+        if ((getGetPersonByIdMethod = GetPersonUseCaseGrpc.getGetPersonByIdMethod) == null) {
+          GetPersonUseCaseGrpc.getGetPersonByIdMethod = getGetPersonByIdMethod =
+              io.grpc.MethodDescriptor.<PersonService.PersonGetRequest, PersonService.PersonProto>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getPersonById"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PersonService.PersonGetRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PersonService.PersonProto.getDefaultInstance()))
+              .setSchemaDescriptor(new GetPersonUseCaseMethodDescriptorSupplier("getPersonById"))
+              .build();
+        }
+      }
+    }
+    return getGetPersonByIdMethod;
   }
 
   /**
@@ -100,6 +129,13 @@ public final class GetPersonUseCaseGrpc {
         io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPersonMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void getPersonById(PersonService.PersonGetRequest request,
+        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPersonByIdMethod(), responseObserver);
+    }
   }
 
   /**
@@ -136,6 +172,14 @@ public final class GetPersonUseCaseGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPersonMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getPersonById(PersonService.PersonGetRequest request,
+        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetPersonByIdMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -159,6 +203,13 @@ public final class GetPersonUseCaseGrpc {
     public PersonService.PersonProto getPerson(PersonService.PersonGetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPersonMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public PersonService.PersonProto getPersonById(PersonService.PersonGetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPersonByIdMethod(), getCallOptions(), request);
     }
   }
 
@@ -185,9 +236,18 @@ public final class GetPersonUseCaseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPersonMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<PersonService.PersonProto> getPersonById(
+        PersonService.PersonGetRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetPersonByIdMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PERSON = 0;
+  private static final int METHODID_GET_PERSON_BY_ID = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -208,6 +268,10 @@ public final class GetPersonUseCaseGrpc {
       switch (methodId) {
         case METHODID_GET_PERSON:
           serviceImpl.getPerson((PersonService.PersonGetRequest) request,
+              (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
+          break;
+        case METHODID_GET_PERSON_BY_ID:
+          serviceImpl.getPersonById((PersonService.PersonGetRequest) request,
               (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
           break;
         default:
@@ -235,6 +299,13 @@ public final class GetPersonUseCaseGrpc {
               PersonService.PersonGetRequest,
               PersonService.PersonProto>(
                 service, METHODID_GET_PERSON)))
+        .addMethod(
+          getGetPersonByIdMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              PersonService.PersonGetRequest,
+              PersonService.PersonProto>(
+                service, METHODID_GET_PERSON_BY_ID)))
         .build();
   }
 
@@ -284,6 +355,7 @@ public final class GetPersonUseCaseGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new GetPersonUseCaseFileDescriptorSupplier())
               .addMethod(getGetPersonMethod())
+              .addMethod(getGetPersonByIdMethod())
               .build();
         }
       }

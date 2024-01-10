@@ -13,7 +13,7 @@ plugins {
 }
 
 group = 'com.quid'
-version = '1.0-SNAPSHOT'
+version = '1.0-0'
 
 repositories {
     mavenCentral()
@@ -37,8 +37,7 @@ protobuf {
     protoc {
         artifact = "com.google.protobuf:protoc:${protobufVersion}"
     }
-    generatedFilesBaseDir = "$rootDir/../server/src/main/proto"
-//    generatedFilesBaseDir = "$rootDir/../client/src/main/proto"
+    generatedFilesBaseDir = "$rootDir/src/generated"
     clean {
         delete generatedFilesBaseDir
     }
@@ -51,5 +50,8 @@ protobuf {
         all()*.plugins {
             grpc {}
         }
+    }
+    jar {
+        enabled = true
     }
 }

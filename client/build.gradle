@@ -24,6 +24,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'net.devh:grpc-client-spring-boot-starter:2.15.0.RELEASE'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation files('../interface/build/libs/interface-1.0-0.jar')
 }
 
 tasks.withType(KotlinCompile) {
