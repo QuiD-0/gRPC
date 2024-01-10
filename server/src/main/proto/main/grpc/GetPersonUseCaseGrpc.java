@@ -1,8 +1,10 @@
+import jakarta.annotation.Generated;
+
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  */
-@javax.annotation.Generated(
+@Generated(
     value = "by gRPC proto compiler (version 1.58.0)",
     comments = "Source: personService.proto")
 @io.grpc.stub.annotations.GrpcGenerated
@@ -14,28 +16,28 @@ public final class GetPersonUseCaseGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
-      PersonService.PersonProto> getGetPersonMethod;
+      PersonOuterClass.Person> getGetPersonMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getPerson",
       requestType = PersonService.PersonGetRequest.class,
-      responseType = PersonService.PersonProto.class,
+      responseType = PersonOuterClass.Person.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
-      PersonService.PersonProto> getGetPersonMethod() {
-    io.grpc.MethodDescriptor<PersonService.PersonGetRequest, PersonService.PersonProto> getGetPersonMethod;
+      PersonOuterClass.Person> getGetPersonMethod() {
+    io.grpc.MethodDescriptor<PersonService.PersonGetRequest, PersonOuterClass.Person> getGetPersonMethod;
     if ((getGetPersonMethod = GetPersonUseCaseGrpc.getGetPersonMethod) == null) {
       synchronized (GetPersonUseCaseGrpc.class) {
         if ((getGetPersonMethod = GetPersonUseCaseGrpc.getGetPersonMethod) == null) {
           GetPersonUseCaseGrpc.getGetPersonMethod = getGetPersonMethod =
-              io.grpc.MethodDescriptor.<PersonService.PersonGetRequest, PersonService.PersonProto>newBuilder()
+              io.grpc.MethodDescriptor.<PersonService.PersonGetRequest, PersonOuterClass.Person>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getPerson"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   PersonService.PersonGetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PersonService.PersonProto.getDefaultInstance()))
+                  PersonOuterClass.Person.getDefaultInstance()))
               .setSchemaDescriptor(new GetPersonUseCaseMethodDescriptorSupplier("getPerson"))
               .build();
         }
@@ -95,7 +97,7 @@ public final class GetPersonUseCaseGrpc {
     /**
      */
     default void getPerson(PersonService.PersonGetRequest request,
-        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+        io.grpc.stub.StreamObserver<PersonOuterClass.Person> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPersonMethod(), responseObserver);
     }
   }
@@ -130,7 +132,7 @@ public final class GetPersonUseCaseGrpc {
     /**
      */
     public void getPerson(PersonService.PersonGetRequest request,
-        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+        io.grpc.stub.StreamObserver<PersonOuterClass.Person> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPersonMethod(), getCallOptions()), request, responseObserver);
     }
@@ -154,7 +156,7 @@ public final class GetPersonUseCaseGrpc {
 
     /**
      */
-    public PersonService.PersonProto getPerson(PersonService.PersonGetRequest request) {
+    public PersonOuterClass.Person getPerson(PersonService.PersonGetRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPersonMethod(), getCallOptions(), request);
     }
@@ -178,7 +180,7 @@ public final class GetPersonUseCaseGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<PersonService.PersonProto> getPerson(
+    public com.google.common.util.concurrent.ListenableFuture<PersonOuterClass.Person> getPerson(
         PersonService.PersonGetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPersonMethod(), getCallOptions()), request);
@@ -206,7 +208,7 @@ public final class GetPersonUseCaseGrpc {
       switch (methodId) {
         case METHODID_GET_PERSON:
           serviceImpl.getPerson((PersonService.PersonGetRequest) request,
-              (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
+              (io.grpc.stub.StreamObserver<PersonOuterClass.Person>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -231,7 +233,7 @@ public final class GetPersonUseCaseGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               PersonService.PersonGetRequest,
-              PersonService.PersonProto>(
+              PersonOuterClass.Person>(
                 service, METHODID_GET_PERSON)))
         .build();
   }

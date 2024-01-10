@@ -564,8 +564,8 @@ public final class PersonService {
 
   }
 
-  public interface PersonProtoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:PersonProto)
+  public interface PersonOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Person)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -581,10 +581,10 @@ public final class PersonService {
         getNameBytes();
 
     /**
-     * <code>uint64 id = 2;</code>
+     * <code>int32 id = 2;</code>
      * @return The id.
      */
-    long getId();
+    int getId();
 
     /**
      * <code>string email = 3;</code>
@@ -599,42 +599,42 @@ public final class PersonService {
         getEmailBytes();
 
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
-    java.util.List<PersonService.PhoneNumberProto> 
+    java.util.List<PersonService.PhoneNumber> 
         getPhonesList();
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
-    PersonService.PhoneNumberProto getPhones(int index);
+    PersonService.PhoneNumber getPhones(int index);
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
     int getPhonesCount();
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
-    java.util.List<? extends PersonService.PhoneNumberProtoOrBuilder> 
+    java.util.List<? extends PersonService.PhoneNumberOrBuilder> 
         getPhonesOrBuilderList();
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
-    PersonService.PhoneNumberProtoOrBuilder getPhonesOrBuilder(
+    PersonService.PhoneNumberOrBuilder getPhonesOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code PersonProto}
+   * Protobuf type {@code Person}
    */
-  public static final class PersonProto extends
+  public static final class Person extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:PersonProto)
-      PersonProtoOrBuilder {
+      // @@protoc_insertion_point(message_implements:Person)
+      PersonOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PersonProto.newBuilder() to construct.
-    private PersonProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use Person.newBuilder() to construct.
+    private Person(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PersonProto() {
+    private Person() {
       name_ = "";
       email_ = "";
       phones_ = java.util.Collections.emptyList();
@@ -644,20 +644,20 @@ public final class PersonService {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PersonProto();
+      return new Person();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return PersonService.internal_static_PersonProto_descriptor;
+      return PersonService.internal_static_Person_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return PersonService.internal_static_PersonProto_fieldAccessorTable
+      return PersonService.internal_static_Person_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PersonService.PersonProto.class, PersonService.PersonProto.Builder.class);
+              PersonService.Person.class, PersonService.Person.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -700,13 +700,13 @@ public final class PersonService {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private long id_ = 0L;
+    private int id_ = 0;
     /**
-     * <code>uint64 id = 2;</code>
+     * <code>int32 id = 2;</code>
      * @return The id.
      */
     @java.lang.Override
-    public long getId() {
+    public int getId() {
       return id_;
     }
 
@@ -751,41 +751,41 @@ public final class PersonService {
 
     public static final int PHONES_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
-    private java.util.List<PersonService.PhoneNumberProto> phones_;
+    private java.util.List<PersonService.PhoneNumber> phones_;
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<PersonService.PhoneNumberProto> getPhonesList() {
+    public java.util.List<PersonService.PhoneNumber> getPhonesList() {
       return phones_;
     }
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
     @java.lang.Override
-    public java.util.List<? extends PersonService.PhoneNumberProtoOrBuilder> 
+    public java.util.List<? extends PersonService.PhoneNumberOrBuilder> 
         getPhonesOrBuilderList() {
       return phones_;
     }
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
     @java.lang.Override
     public int getPhonesCount() {
       return phones_.size();
     }
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
     @java.lang.Override
-    public PersonService.PhoneNumberProto getPhones(int index) {
+    public PersonService.PhoneNumber getPhones(int index) {
       return phones_.get(index);
     }
     /**
-     * <code>repeated .PhoneNumberProto phones = 4;</code>
+     * <code>repeated .PhoneNumber phones = 4;</code>
      */
     @java.lang.Override
-    public PersonService.PhoneNumberProtoOrBuilder getPhonesOrBuilder(
+    public PersonService.PhoneNumberOrBuilder getPhonesOrBuilder(
         int index) {
       return phones_.get(index);
     }
@@ -807,8 +807,8 @@ public final class PersonService {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (id_ != 0L) {
-        output.writeUInt64(2, id_);
+      if (id_ != 0) {
+        output.writeInt32(2, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
@@ -828,9 +828,9 @@ public final class PersonService {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (id_ != 0L) {
+      if (id_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(2, id_);
+          .computeInt32Size(2, id_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
@@ -849,10 +849,10 @@ public final class PersonService {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof PersonService.PersonProto)) {
+      if (!(obj instanceof PersonService.Person)) {
         return super.equals(obj);
       }
-      PersonService.PersonProto other = (PersonService.PersonProto) obj;
+      PersonService.Person other = (PersonService.Person) obj;
 
       if (!getName()
           .equals(other.getName())) return false;
@@ -876,8 +876,7 @@ public final class PersonService {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getId());
+      hash = (53 * hash) + getId();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       if (getPhonesCount() > 0) {
@@ -889,44 +888,44 @@ public final class PersonService {
       return hash;
     }
 
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PersonService.PersonProto parseFrom(byte[] data)
+    public static PersonService.Person parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PersonService.PersonProto parseFrom(java.io.InputStream input)
+    public static PersonService.Person parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -934,26 +933,26 @@ public final class PersonService {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static PersonService.PersonProto parseDelimitedFrom(java.io.InputStream input)
+    public static PersonService.Person parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static PersonService.PersonProto parseDelimitedFrom(
+    public static PersonService.Person parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PersonService.PersonProto parseFrom(
+    public static PersonService.Person parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -966,7 +965,7 @@ public final class PersonService {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(PersonService.PersonProto prototype) {
+    public static Builder newBuilder(PersonService.Person prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -982,26 +981,26 @@ public final class PersonService {
       return builder;
     }
     /**
-     * Protobuf type {@code PersonProto}
+     * Protobuf type {@code Person}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:PersonProto)
-        PersonService.PersonProtoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:Person)
+        PersonService.PersonOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return PersonService.internal_static_PersonProto_descriptor;
+        return PersonService.internal_static_Person_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return PersonService.internal_static_PersonProto_fieldAccessorTable
+        return PersonService.internal_static_Person_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                PersonService.PersonProto.class, PersonService.PersonProto.Builder.class);
+                PersonService.Person.class, PersonService.Person.Builder.class);
       }
 
-      // Construct using PersonService.PersonProto.newBuilder()
+      // Construct using PersonService.Person.newBuilder()
       private Builder() {
 
       }
@@ -1016,7 +1015,7 @@ public final class PersonService {
         super.clear();
         bitField0_ = 0;
         name_ = "";
-        id_ = 0L;
+        id_ = 0;
         email_ = "";
         if (phonesBuilder_ == null) {
           phones_ = java.util.Collections.emptyList();
@@ -1031,17 +1030,17 @@ public final class PersonService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return PersonService.internal_static_PersonProto_descriptor;
+        return PersonService.internal_static_Person_descriptor;
       }
 
       @java.lang.Override
-      public PersonService.PersonProto getDefaultInstanceForType() {
-        return PersonService.PersonProto.getDefaultInstance();
+      public PersonService.Person getDefaultInstanceForType() {
+        return PersonService.Person.getDefaultInstance();
       }
 
       @java.lang.Override
-      public PersonService.PersonProto build() {
-        PersonService.PersonProto result = buildPartial();
+      public PersonService.Person build() {
+        PersonService.Person result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1049,15 +1048,15 @@ public final class PersonService {
       }
 
       @java.lang.Override
-      public PersonService.PersonProto buildPartial() {
-        PersonService.PersonProto result = new PersonService.PersonProto(this);
+      public PersonService.Person buildPartial() {
+        PersonService.Person result = new PersonService.Person(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(PersonService.PersonProto result) {
+      private void buildPartialRepeatedFields(PersonService.Person result) {
         if (phonesBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0)) {
             phones_ = java.util.Collections.unmodifiableList(phones_);
@@ -1069,7 +1068,7 @@ public final class PersonService {
         }
       }
 
-      private void buildPartial0(PersonService.PersonProto result) {
+      private void buildPartial0(PersonService.Person result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.name_ = name_;
@@ -1116,22 +1115,22 @@ public final class PersonService {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PersonService.PersonProto) {
-          return mergeFrom((PersonService.PersonProto)other);
+        if (other instanceof PersonService.Person) {
+          return mergeFrom((PersonService.Person)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(PersonService.PersonProto other) {
-        if (other == PersonService.PersonProto.getDefaultInstance()) return this;
+      public Builder mergeFrom(PersonService.Person other) {
+        if (other == PersonService.Person.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (other.getId() != 0L) {
+        if (other.getId() != 0) {
           setId(other.getId());
         }
         if (!other.getEmail().isEmpty()) {
@@ -1197,7 +1196,7 @@ public final class PersonService {
                 break;
               } // case 10
               case 16: {
-                id_ = input.readUInt64();
+                id_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
@@ -1207,9 +1206,9 @@ public final class PersonService {
                 break;
               } // case 26
               case 34: {
-                PersonService.PhoneNumberProto m =
+                PersonService.PhoneNumber m =
                     input.readMessage(
-                        PersonService.PhoneNumberProto.parser(),
+                        PersonService.PhoneNumber.parser(),
                         extensionRegistry);
                 if (phonesBuilder_ == null) {
                   ensurePhonesIsMutable();
@@ -1308,21 +1307,21 @@ public final class PersonService {
         return this;
       }
 
-      private long id_ ;
+      private int id_ ;
       /**
-       * <code>uint64 id = 2;</code>
+       * <code>int32 id = 2;</code>
        * @return The id.
        */
       @java.lang.Override
-      public long getId() {
+      public int getId() {
         return id_;
       }
       /**
-       * <code>uint64 id = 2;</code>
+       * <code>int32 id = 2;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(long value) {
+      public Builder setId(int value) {
 
         id_ = value;
         bitField0_ |= 0x00000002;
@@ -1330,12 +1329,12 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>uint64 id = 2;</code>
+       * <code>int32 id = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        id_ = 0L;
+        id_ = 0;
         onChanged();
         return this;
       }
@@ -1412,22 +1411,22 @@ public final class PersonService {
         return this;
       }
 
-      private java.util.List<PersonService.PhoneNumberProto> phones_ =
+      private java.util.List<PersonService.PhoneNumber> phones_ =
         java.util.Collections.emptyList();
       private void ensurePhonesIsMutable() {
         if (!((bitField0_ & 0x00000008) != 0)) {
-          phones_ = new java.util.ArrayList<PersonService.PhoneNumberProto>(phones_);
+          phones_ = new java.util.ArrayList<PersonService.PhoneNumber>(phones_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          PersonService.PhoneNumberProto, PersonService.PhoneNumberProto.Builder, PersonService.PhoneNumberProtoOrBuilder> phonesBuilder_;
+          PersonService.PhoneNumber, PersonService.PhoneNumber.Builder, PersonService.PhoneNumberOrBuilder> phonesBuilder_;
 
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public java.util.List<PersonService.PhoneNumberProto> getPhonesList() {
+      public java.util.List<PersonService.PhoneNumber> getPhonesList() {
         if (phonesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(phones_);
         } else {
@@ -1435,7 +1434,7 @@ public final class PersonService {
         }
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public int getPhonesCount() {
         if (phonesBuilder_ == null) {
@@ -1445,9 +1444,9 @@ public final class PersonService {
         }
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public PersonService.PhoneNumberProto getPhones(int index) {
+      public PersonService.PhoneNumber getPhones(int index) {
         if (phonesBuilder_ == null) {
           return phones_.get(index);
         } else {
@@ -1455,10 +1454,10 @@ public final class PersonService {
         }
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder setPhones(
-          int index, PersonService.PhoneNumberProto value) {
+          int index, PersonService.PhoneNumber value) {
         if (phonesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1472,10 +1471,10 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder setPhones(
-          int index, PersonService.PhoneNumberProto.Builder builderForValue) {
+          int index, PersonService.PhoneNumber.Builder builderForValue) {
         if (phonesBuilder_ == null) {
           ensurePhonesIsMutable();
           phones_.set(index, builderForValue.build());
@@ -1486,9 +1485,9 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public Builder addPhones(PersonService.PhoneNumberProto value) {
+      public Builder addPhones(PersonService.PhoneNumber value) {
         if (phonesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1502,10 +1501,10 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder addPhones(
-          int index, PersonService.PhoneNumberProto value) {
+          int index, PersonService.PhoneNumber value) {
         if (phonesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1519,10 +1518,10 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder addPhones(
-          PersonService.PhoneNumberProto.Builder builderForValue) {
+          PersonService.PhoneNumber.Builder builderForValue) {
         if (phonesBuilder_ == null) {
           ensurePhonesIsMutable();
           phones_.add(builderForValue.build());
@@ -1533,10 +1532,10 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder addPhones(
-          int index, PersonService.PhoneNumberProto.Builder builderForValue) {
+          int index, PersonService.PhoneNumber.Builder builderForValue) {
         if (phonesBuilder_ == null) {
           ensurePhonesIsMutable();
           phones_.add(index, builderForValue.build());
@@ -1547,10 +1546,10 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder addAllPhones(
-          java.lang.Iterable<? extends PersonService.PhoneNumberProto> values) {
+          java.lang.Iterable<? extends PersonService.PhoneNumber> values) {
         if (phonesBuilder_ == null) {
           ensurePhonesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1562,7 +1561,7 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder clearPhones() {
         if (phonesBuilder_ == null) {
@@ -1575,7 +1574,7 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
       public Builder removePhones(int index) {
         if (phonesBuilder_ == null) {
@@ -1588,16 +1587,16 @@ public final class PersonService {
         return this;
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public PersonService.PhoneNumberProto.Builder getPhonesBuilder(
+      public PersonService.PhoneNumber.Builder getPhonesBuilder(
           int index) {
         return getPhonesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public PersonService.PhoneNumberProtoOrBuilder getPhonesOrBuilder(
+      public PersonService.PhoneNumberOrBuilder getPhonesOrBuilder(
           int index) {
         if (phonesBuilder_ == null) {
           return phones_.get(index);  } else {
@@ -1605,9 +1604,9 @@ public final class PersonService {
         }
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public java.util.List<? extends PersonService.PhoneNumberProtoOrBuilder> 
+      public java.util.List<? extends PersonService.PhoneNumberOrBuilder> 
            getPhonesOrBuilderList() {
         if (phonesBuilder_ != null) {
           return phonesBuilder_.getMessageOrBuilderList();
@@ -1616,33 +1615,33 @@ public final class PersonService {
         }
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public PersonService.PhoneNumberProto.Builder addPhonesBuilder() {
+      public PersonService.PhoneNumber.Builder addPhonesBuilder() {
         return getPhonesFieldBuilder().addBuilder(
-            PersonService.PhoneNumberProto.getDefaultInstance());
+            PersonService.PhoneNumber.getDefaultInstance());
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public PersonService.PhoneNumberProto.Builder addPhonesBuilder(
+      public PersonService.PhoneNumber.Builder addPhonesBuilder(
           int index) {
         return getPhonesFieldBuilder().addBuilder(
-            index, PersonService.PhoneNumberProto.getDefaultInstance());
+            index, PersonService.PhoneNumber.getDefaultInstance());
       }
       /**
-       * <code>repeated .PhoneNumberProto phones = 4;</code>
+       * <code>repeated .PhoneNumber phones = 4;</code>
        */
-      public java.util.List<PersonService.PhoneNumberProto.Builder> 
+      public java.util.List<PersonService.PhoneNumber.Builder> 
            getPhonesBuilderList() {
         return getPhonesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          PersonService.PhoneNumberProto, PersonService.PhoneNumberProto.Builder, PersonService.PhoneNumberProtoOrBuilder> 
+          PersonService.PhoneNumber, PersonService.PhoneNumber.Builder, PersonService.PhoneNumberOrBuilder> 
           getPhonesFieldBuilder() {
         if (phonesBuilder_ == null) {
           phonesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              PersonService.PhoneNumberProto, PersonService.PhoneNumberProto.Builder, PersonService.PhoneNumberProtoOrBuilder>(
+              PersonService.PhoneNumber, PersonService.PhoneNumber.Builder, PersonService.PhoneNumberOrBuilder>(
                   phones_,
                   ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
@@ -1664,23 +1663,23 @@ public final class PersonService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:PersonProto)
+      // @@protoc_insertion_point(builder_scope:Person)
     }
 
-    // @@protoc_insertion_point(class_scope:PersonProto)
-    private static final PersonService.PersonProto DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:Person)
+    private static final PersonService.Person DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new PersonService.PersonProto();
+      DEFAULT_INSTANCE = new PersonService.Person();
     }
 
-    public static PersonService.PersonProto getDefaultInstance() {
+    public static PersonService.Person getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PersonProto>
-        PARSER = new com.google.protobuf.AbstractParser<PersonProto>() {
+    private static final com.google.protobuf.Parser<Person>
+        PARSER = new com.google.protobuf.AbstractParser<Person>() {
       @java.lang.Override
-      public PersonProto parsePartialFrom(
+      public Person parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1699,24 +1698,24 @@ public final class PersonService {
       }
     };
 
-    public static com.google.protobuf.Parser<PersonProto> parser() {
+    public static com.google.protobuf.Parser<Person> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PersonProto> getParserForType() {
+    public com.google.protobuf.Parser<Person> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public PersonService.PersonProto getDefaultInstanceForType() {
+    public PersonService.Person getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface PhoneNumberProtoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:PhoneNumberProto)
+  public interface PhoneNumberOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PhoneNumber)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1732,18 +1731,18 @@ public final class PersonService {
         getNumberBytes();
   }
   /**
-   * Protobuf type {@code PhoneNumberProto}
+   * Protobuf type {@code PhoneNumber}
    */
-  public static final class PhoneNumberProto extends
+  public static final class PhoneNumber extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:PhoneNumberProto)
-      PhoneNumberProtoOrBuilder {
+      // @@protoc_insertion_point(message_implements:PhoneNumber)
+      PhoneNumberOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use PhoneNumberProto.newBuilder() to construct.
-    private PhoneNumberProto(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PhoneNumber.newBuilder() to construct.
+    private PhoneNumber(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private PhoneNumberProto() {
+    private PhoneNumber() {
       number_ = "";
     }
 
@@ -1751,20 +1750,20 @@ public final class PersonService {
     @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
-      return new PhoneNumberProto();
+      return new PhoneNumber();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return PersonService.internal_static_PhoneNumberProto_descriptor;
+      return PersonService.internal_static_PhoneNumber_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return PersonService.internal_static_PhoneNumberProto_fieldAccessorTable
+      return PersonService.internal_static_PhoneNumber_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              PersonService.PhoneNumberProto.class, PersonService.PhoneNumberProto.Builder.class);
+              PersonService.PhoneNumber.class, PersonService.PhoneNumber.Builder.class);
     }
 
     public static final int NUMBER_FIELD_NUMBER = 1;
@@ -1845,10 +1844,10 @@ public final class PersonService {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof PersonService.PhoneNumberProto)) {
+      if (!(obj instanceof PersonService.PhoneNumber)) {
         return super.equals(obj);
       }
-      PersonService.PhoneNumberProto other = (PersonService.PhoneNumberProto) obj;
+      PersonService.PhoneNumber other = (PersonService.PhoneNumber) obj;
 
       if (!getNumber()
           .equals(other.getNumber())) return false;
@@ -1870,44 +1869,44 @@ public final class PersonService {
       return hash;
     }
 
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PersonService.PhoneNumberProto parseFrom(byte[] data)
+    public static PersonService.PhoneNumber parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static PersonService.PhoneNumberProto parseFrom(java.io.InputStream input)
+    public static PersonService.PhoneNumber parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1915,26 +1914,26 @@ public final class PersonService {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static PersonService.PhoneNumberProto parseDelimitedFrom(java.io.InputStream input)
+    public static PersonService.PhoneNumber parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static PersonService.PhoneNumberProto parseDelimitedFrom(
+    public static PersonService.PhoneNumber parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static PersonService.PhoneNumberProto parseFrom(
+    public static PersonService.PhoneNumber parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1947,7 +1946,7 @@ public final class PersonService {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(PersonService.PhoneNumberProto prototype) {
+    public static Builder newBuilder(PersonService.PhoneNumber prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1963,26 +1962,26 @@ public final class PersonService {
       return builder;
     }
     /**
-     * Protobuf type {@code PhoneNumberProto}
+     * Protobuf type {@code PhoneNumber}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:PhoneNumberProto)
-        PersonService.PhoneNumberProtoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:PhoneNumber)
+        PersonService.PhoneNumberOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return PersonService.internal_static_PhoneNumberProto_descriptor;
+        return PersonService.internal_static_PhoneNumber_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return PersonService.internal_static_PhoneNumberProto_fieldAccessorTable
+        return PersonService.internal_static_PhoneNumber_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                PersonService.PhoneNumberProto.class, PersonService.PhoneNumberProto.Builder.class);
+                PersonService.PhoneNumber.class, PersonService.PhoneNumber.Builder.class);
       }
 
-      // Construct using PersonService.PhoneNumberProto.newBuilder()
+      // Construct using PersonService.PhoneNumber.newBuilder()
       private Builder() {
 
       }
@@ -2003,17 +2002,17 @@ public final class PersonService {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return PersonService.internal_static_PhoneNumberProto_descriptor;
+        return PersonService.internal_static_PhoneNumber_descriptor;
       }
 
       @java.lang.Override
-      public PersonService.PhoneNumberProto getDefaultInstanceForType() {
-        return PersonService.PhoneNumberProto.getDefaultInstance();
+      public PersonService.PhoneNumber getDefaultInstanceForType() {
+        return PersonService.PhoneNumber.getDefaultInstance();
       }
 
       @java.lang.Override
-      public PersonService.PhoneNumberProto build() {
-        PersonService.PhoneNumberProto result = buildPartial();
+      public PersonService.PhoneNumber build() {
+        PersonService.PhoneNumber result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2021,14 +2020,14 @@ public final class PersonService {
       }
 
       @java.lang.Override
-      public PersonService.PhoneNumberProto buildPartial() {
-        PersonService.PhoneNumberProto result = new PersonService.PhoneNumberProto(this);
+      public PersonService.PhoneNumber buildPartial() {
+        PersonService.PhoneNumber result = new PersonService.PhoneNumber(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(PersonService.PhoneNumberProto result) {
+      private void buildPartial0(PersonService.PhoneNumber result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.number_ = number_;
@@ -2069,16 +2068,16 @@ public final class PersonService {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof PersonService.PhoneNumberProto) {
-          return mergeFrom((PersonService.PhoneNumberProto)other);
+        if (other instanceof PersonService.PhoneNumber) {
+          return mergeFrom((PersonService.PhoneNumber)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(PersonService.PhoneNumberProto other) {
-        if (other == PersonService.PhoneNumberProto.getDefaultInstance()) return this;
+      public Builder mergeFrom(PersonService.PhoneNumber other) {
+        if (other == PersonService.PhoneNumber.getDefaultInstance()) return this;
         if (!other.getNumber().isEmpty()) {
           number_ = other.number_;
           bitField0_ |= 0x00000001;
@@ -2216,23 +2215,23 @@ public final class PersonService {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:PhoneNumberProto)
+      // @@protoc_insertion_point(builder_scope:PhoneNumber)
     }
 
-    // @@protoc_insertion_point(class_scope:PhoneNumberProto)
-    private static final PersonService.PhoneNumberProto DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:PhoneNumber)
+    private static final PersonService.PhoneNumber DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new PersonService.PhoneNumberProto();
+      DEFAULT_INSTANCE = new PersonService.PhoneNumber();
     }
 
-    public static PersonService.PhoneNumberProto getDefaultInstance() {
+    public static PersonService.PhoneNumber getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PhoneNumberProto>
-        PARSER = new com.google.protobuf.AbstractParser<PhoneNumberProto>() {
+    private static final com.google.protobuf.Parser<PhoneNumber>
+        PARSER = new com.google.protobuf.AbstractParser<PhoneNumber>() {
       @java.lang.Override
-      public PhoneNumberProto parsePartialFrom(
+      public PhoneNumber parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2251,17 +2250,17 @@ public final class PersonService {
       }
     };
 
-    public static com.google.protobuf.Parser<PhoneNumberProto> parser() {
+    public static com.google.protobuf.Parser<PhoneNumber> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PhoneNumberProto> getParserForType() {
+    public com.google.protobuf.Parser<PhoneNumber> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public PersonService.PhoneNumberProto getDefaultInstanceForType() {
+    public PersonService.PhoneNumber getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2273,15 +2272,15 @@ public final class PersonService {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_PersonGetRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_PersonProto_descriptor;
+    internal_static_Person_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_PersonProto_fieldAccessorTable;
+      internal_static_Person_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_PhoneNumberProto_descriptor;
+    internal_static_PhoneNumber_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_PhoneNumberProto_fieldAccessorTable;
+      internal_static_PhoneNumber_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2292,12 +2291,11 @@ public final class PersonService {
   static {
     java.lang.String[] descriptorData = {
       "\n\023personService.proto\"\036\n\020PersonGetReques" +
-      "t\022\n\n\002id\030\001 \001(\t\"Y\n\013PersonProto\022\014\n\004name\030\001 \001" +
-      "(\t\022\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022!\n\006phones\030" +
-      "\004 \003(\0132\021.PhoneNumberProto\"\"\n\020PhoneNumberP" +
-      "roto\022\016\n\006number\030\001 \001(\t2@\n\020GetPersonUseCase" +
-      "\022,\n\tgetPerson\022\021.PersonGetRequest\032\014.Perso" +
-      "nProtob\006proto3"
+      "t\022\n\n\002id\030\001 \001(\t\"O\n\006Person\022\014\n\004name\030\001 \001(\t\022\n\n" +
+      "\002id\030\002 \001(\005\022\r\n\005email\030\003 \001(\t\022\034\n\006phones\030\004 \003(\013" +
+      "2\014.PhoneNumber\"\035\n\013PhoneNumber\022\016\n\006number\030" +
+      "\001 \001(\t2;\n\020GetPersonUseCase\022\'\n\tgetPerson\022\021" +
+      ".PersonGetRequest\032\007.Personb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2309,17 +2307,17 @@ public final class PersonService {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PersonGetRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_PersonProto_descriptor =
+    internal_static_Person_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_PersonProto_fieldAccessorTable = new
+    internal_static_Person_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_PersonProto_descriptor,
+        internal_static_Person_descriptor,
         new java.lang.String[] { "Name", "Id", "Email", "Phones", });
-    internal_static_PhoneNumberProto_descriptor =
+    internal_static_PhoneNumber_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_PhoneNumberProto_fieldAccessorTable = new
+    internal_static_PhoneNumber_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_PhoneNumberProto_descriptor,
+        internal_static_PhoneNumber_descriptor,
         new java.lang.String[] { "Number", });
   }
 

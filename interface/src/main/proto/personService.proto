@@ -1,20 +1,20 @@
 syntax = "proto3";
 
 service GetPersonUseCase {
-    rpc getPerson (PersonGetRequest) returns (PersonProto);
+    rpc getPerson (PersonGetRequest) returns (Person);
 }
 
 message PersonGetRequest {
     string id = 1;
 }
 
-message PersonProto {
+message Person {
     string name = 1;
-    uint64 id = 2;
+    int32 id = 2;
     string email = 3;
-    repeated PhoneNumberProto phones = 4;
+    repeated PhoneNumber phones = 4;
 }
 
-message PhoneNumberProto {
+message PhoneNumber {
     string number = 1;
 }
