@@ -37,12 +37,3 @@ tasks.withType(KotlinCompile) {
 tasks.named('test') {
     useJUnitPlatform()
 }
-
-sourceSets {
-    main {
-        java {
-            srcDirs("src/main/proto/main/java")
-            srcDirs("src/main/proto/main/grpc")
-        }
-    }
-}
