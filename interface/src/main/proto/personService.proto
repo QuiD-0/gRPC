@@ -1,9 +1,10 @@
 syntax = "proto3";
+import "google/protobuf/empty.proto";
 
 service PersonUseCase {
-    rpc getPerson (PersonGetRequest) returns (PersonProto);
+    rpc getPerson (google.protobuf.Empty) returns (stream PersonProto);
     rpc getPersonById (PersonGetRequest) returns (PersonProto);
-    rpc createPerson (PersonCreateRequest) returns (PersonProto);
+    rpc createPerson (PersonCreateRequest) returns (google.protobuf.Empty);
 }
 
 message PersonGetRequest {

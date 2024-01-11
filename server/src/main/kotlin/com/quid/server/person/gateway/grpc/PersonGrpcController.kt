@@ -2,6 +2,7 @@ package com.quid.server.person.gateway.grpc
 
 import PersonService.*
 import PersonUseCaseGrpc.PersonUseCaseImplBase
+import com.google.protobuf.Empty
 import com.quid.server.person.usecase.CreatePerson
 import com.quid.server.person.usecase.FindPerson
 import io.grpc.stub.StreamObserver
@@ -13,30 +14,26 @@ class PersonGrpcController(
     private val createPerson: CreatePerson
 ) : PersonUseCaseImplBase() {
 
-    override fun getPerson(
-        request: PersonGetRequest,
-        responseObserver: StreamObserver<PersonProto>
-    ) {
+    override fun getPerson(request: Empty, responseObserver: StreamObserver<PersonProto>) {
+        findPerson.all()
+            .map { it.toPersonGrpc() }
+            .forEach { responseObserver.onNext(it) }
+            .also { responseObserver.onCompleted() }
+    }
+
+    override fun getPersonById(request: PersonGetRequest, responseObserver: StreamObserver<PersonProto>) {
         findPerson.byId(request.id)
             .toPersonGrpc()
-            .let { sendResponse(responseObserver, it) }
+            .also { responseObserver.onNext(it) }
+            .also { responseObserver.onCompleted() }
     }
 
     override fun createPerson(
         request: PersonCreateRequest,
-        responseObserver: StreamObserver<PersonProto>
+        responseObserver: StreamObserver<Empty>
     ) {
         createPerson(request)
-            .toPersonGrpc()
-            .let { sendResponse(responseObserver, it) }
+            .also { responseObserver.onNext(Empty.getDefaultInstance()) }
+            .also { responseObserver.onCompleted() }
     }
-
-    private fun <T> sendResponse(
-        responseObserver: StreamObserver<T>,
-        it: T
-    ) {
-        responseObserver.onNext(it)
-        responseObserver.onCompleted()
-    }
-
 }

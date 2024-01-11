@@ -13,27 +13,27 @@ public final class PersonUseCaseGrpc {
   public static final java.lang.String SERVICE_NAME = "PersonUseCase";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
+  private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
       PersonService.PersonProto> getGetPersonMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getPerson",
-      requestType = PersonService.PersonGetRequest.class,
+      requestType = com.google.protobuf.Empty.class,
       responseType = PersonService.PersonProto.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
       PersonService.PersonProto> getGetPersonMethod() {
-    io.grpc.MethodDescriptor<PersonService.PersonGetRequest, PersonService.PersonProto> getGetPersonMethod;
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, PersonService.PersonProto> getGetPersonMethod;
     if ((getGetPersonMethod = PersonUseCaseGrpc.getGetPersonMethod) == null) {
       synchronized (PersonUseCaseGrpc.class) {
         if ((getGetPersonMethod = PersonUseCaseGrpc.getGetPersonMethod) == null) {
           PersonUseCaseGrpc.getGetPersonMethod = getGetPersonMethod =
-              io.grpc.MethodDescriptor.<PersonService.PersonGetRequest, PersonService.PersonProto>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, PersonService.PersonProto>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getPerson"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PersonService.PersonGetRequest.getDefaultInstance()))
+                  com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   PersonService.PersonProto.getDefaultInstance()))
               .setSchemaDescriptor(new PersonUseCaseMethodDescriptorSupplier("getPerson"))
@@ -76,28 +76,28 @@ public final class PersonUseCaseGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<PersonService.PersonCreateRequest,
-      PersonService.PersonProto> getCreatePersonMethod;
+      com.google.protobuf.Empty> getCreatePersonMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "createPerson",
       requestType = PersonService.PersonCreateRequest.class,
-      responseType = PersonService.PersonProto.class,
+      responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<PersonService.PersonCreateRequest,
-      PersonService.PersonProto> getCreatePersonMethod() {
-    io.grpc.MethodDescriptor<PersonService.PersonCreateRequest, PersonService.PersonProto> getCreatePersonMethod;
+      com.google.protobuf.Empty> getCreatePersonMethod() {
+    io.grpc.MethodDescriptor<PersonService.PersonCreateRequest, com.google.protobuf.Empty> getCreatePersonMethod;
     if ((getCreatePersonMethod = PersonUseCaseGrpc.getCreatePersonMethod) == null) {
       synchronized (PersonUseCaseGrpc.class) {
         if ((getCreatePersonMethod = PersonUseCaseGrpc.getCreatePersonMethod) == null) {
           PersonUseCaseGrpc.getCreatePersonMethod = getCreatePersonMethod =
-              io.grpc.MethodDescriptor.<PersonService.PersonCreateRequest, PersonService.PersonProto>newBuilder()
+              io.grpc.MethodDescriptor.<PersonService.PersonCreateRequest, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createPerson"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   PersonService.PersonCreateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  PersonService.PersonProto.getDefaultInstance()))
+                  com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new PersonUseCaseMethodDescriptorSupplier("createPerson"))
               .build();
         }
@@ -156,7 +156,7 @@ public final class PersonUseCaseGrpc {
 
     /**
      */
-    default void getPerson(PersonService.PersonGetRequest request,
+    default void getPerson(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPersonMethod(), responseObserver);
     }
@@ -171,7 +171,7 @@ public final class PersonUseCaseGrpc {
     /**
      */
     default void createPerson(PersonService.PersonCreateRequest request,
-        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePersonMethod(), responseObserver);
     }
   }
@@ -205,9 +205,9 @@ public final class PersonUseCaseGrpc {
 
     /**
      */
-    public void getPerson(PersonService.PersonGetRequest request,
+    public void getPerson(com.google.protobuf.Empty request,
         io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
+      io.grpc.stub.ClientCalls.asyncServerStreamingCall(
           getChannel().newCall(getGetPersonMethod(), getCallOptions()), request, responseObserver);
     }
 
@@ -222,7 +222,7 @@ public final class PersonUseCaseGrpc {
     /**
      */
     public void createPerson(PersonService.PersonCreateRequest request,
-        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePersonMethod(), getCallOptions()), request, responseObserver);
     }
@@ -246,8 +246,9 @@ public final class PersonUseCaseGrpc {
 
     /**
      */
-    public PersonService.PersonProto getPerson(PersonService.PersonGetRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+    public java.util.Iterator<PersonService.PersonProto> getPerson(
+        com.google.protobuf.Empty request) {
+      return io.grpc.stub.ClientCalls.blockingServerStreamingCall(
           getChannel(), getGetPersonMethod(), getCallOptions(), request);
     }
 
@@ -260,7 +261,7 @@ public final class PersonUseCaseGrpc {
 
     /**
      */
-    public PersonService.PersonProto createPerson(PersonService.PersonCreateRequest request) {
+    public com.google.protobuf.Empty createPerson(PersonService.PersonCreateRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreatePersonMethod(), getCallOptions(), request);
     }
@@ -284,14 +285,6 @@ public final class PersonUseCaseGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<PersonService.PersonProto> getPerson(
-        PersonService.PersonGetRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getGetPersonMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<PersonService.PersonProto> getPersonById(
         PersonService.PersonGetRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
@@ -300,7 +293,7 @@ public final class PersonUseCaseGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<PersonService.PersonProto> createPerson(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> createPerson(
         PersonService.PersonCreateRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePersonMethod(), getCallOptions()), request);
@@ -329,7 +322,7 @@ public final class PersonUseCaseGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_GET_PERSON:
-          serviceImpl.getPerson((PersonService.PersonGetRequest) request,
+          serviceImpl.getPerson((com.google.protobuf.Empty) request,
               (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
           break;
         case METHODID_GET_PERSON_BY_ID:
@@ -338,7 +331,7 @@ public final class PersonUseCaseGrpc {
           break;
         case METHODID_CREATE_PERSON:
           serviceImpl.createPerson((PersonService.PersonCreateRequest) request,
-              (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -360,9 +353,9 @@ public final class PersonUseCaseGrpc {
     return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
         .addMethod(
           getGetPersonMethod(),
-          io.grpc.stub.ServerCalls.asyncUnaryCall(
+          io.grpc.stub.ServerCalls.asyncServerStreamingCall(
             new MethodHandlers<
-              PersonService.PersonGetRequest,
+              com.google.protobuf.Empty,
               PersonService.PersonProto>(
                 service, METHODID_GET_PERSON)))
         .addMethod(
@@ -377,7 +370,7 @@ public final class PersonUseCaseGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               PersonService.PersonCreateRequest,
-              PersonService.PersonProto>(
+              com.google.protobuf.Empty>(
                 service, METHODID_CREATE_PERSON)))
         .build();
   }

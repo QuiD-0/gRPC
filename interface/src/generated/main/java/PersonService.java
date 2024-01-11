@@ -3208,21 +3208,24 @@ public final class PersonService {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023personService.proto\"\036\n\020PersonGetReques" +
-      "t\022\n\n\002id\030\001 \001(\004\"T\n\023PersonCreateRequest\022\014\n\004" +
-      "name\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022\024\n" +
-      "\014phoneNumbers\030\004 \003(\t\"Y\n\013PersonProto\022\014\n\004na" +
-      "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022!\n\006p" +
-      "hones\030\004 \003(\0132\021.PhoneNumberProto\"\"\n\020PhoneN" +
-      "umberProto\022\016\n\006number\030\001 \001(\t2\243\001\n\rPersonUse" +
-      "Case\022,\n\tgetPerson\022\021.PersonGetRequest\032\014.P" +
-      "ersonProto\0220\n\rgetPersonById\022\021.PersonGetR" +
-      "equest\032\014.PersonProto\0222\n\014createPerson\022\024.P" +
-      "ersonCreateRequest\032\014.PersonProtob\006proto3"
+      "\n\023personService.proto\032\033google/protobuf/e" +
+      "mpty.proto\"\036\n\020PersonGetRequest\022\n\n\002id\030\001 \001" +
+      "(\004\"T\n\023PersonCreateRequest\022\014\n\004name\030\001 \001(\t\022" +
+      "\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022\024\n\014phoneNumbe" +
+      "rs\030\004 \003(\t\"Y\n\013PersonProto\022\014\n\004name\030\001 \001(\t\022\n\n" +
+      "\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022!\n\006phones\030\004 \003(\013" +
+      "2\021.PhoneNumberProto\"\"\n\020PhoneNumberProto\022" +
+      "\016\n\006number\030\001 \001(\t2\264\001\n\rPersonUseCase\0223\n\tget" +
+      "Person\022\026.google.protobuf.Empty\032\014.PersonP" +
+      "roto0\001\0220\n\rgetPersonById\022\021.PersonGetReque" +
+      "st\032\014.PersonProto\022<\n\014createPerson\022\024.Perso" +
+      "nCreateRequest\032\026.google.protobuf.Emptyb\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.EmptyProto.getDescriptor(),
         });
     internal_static_PersonGetRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -3248,6 +3251,7 @@ public final class PersonService {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PhoneNumberProto_descriptor,
         new java.lang.String[] { "Number", });
+    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

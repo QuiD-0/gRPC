@@ -8,6 +8,7 @@ interface PersonRepository {
 
     fun save(person :Person): Person
     fun findById(id: Long): Person
+    fun findAll(): List<Person>
 
     @Repository
     class PersonRepositoryImpl(
@@ -19,6 +20,10 @@ interface PersonRepository {
 
         override fun findById(id: Long): Person {
             return inMemoryRepository.findById(id)
+        }
+
+        override fun findAll(): List<Person> {
+            return inMemoryRepository.findAll()
         }
     }
 }

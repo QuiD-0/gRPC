@@ -1,5 +1,6 @@
 package com.quid.client.person.gateway.web
 
+import com.google.protobuf.Empty
 import com.quid.client.person.domain.Person
 import com.quid.client.person.gateway.grpc.PersonGrpcClient
 import com.quid.client.person.gateway.web.request.CreatePersonRequest
@@ -13,10 +14,15 @@ class PersonApiController(
 
     @GetMapping("/{id}")
     fun getPerson(@PathVariable id: Long): Person =
-        personGrpcClient.getPerson(id)
+        personGrpcClient.getPersonById(id)
+
+    @GetMapping
+    fun getPersonList(): List<Person> =
+        personGrpcClient.getPerson()
 
     @PostMapping
-    fun createPerson(@RequestBody request: CreatePersonRequest): Person =
+    fun createPerson(@RequestBody request: CreatePersonRequest){
         personGrpcClient.createPerson(request.toPersonGrpc())
+    }
 
 }
