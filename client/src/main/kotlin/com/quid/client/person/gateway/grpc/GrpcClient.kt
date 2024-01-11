@@ -1,16 +1,16 @@
 package com.quid.client.person.gateway.grpc
 
+import PersonService.PersonCreateRequest
 import PersonService.PersonGetRequest
 import PersonUseCaseGrpc.PersonUseCaseBlockingStub
 import com.quid.client.person.domain.Person
 import com.quid.client.person.domain.toDomain
-import com.quid.client.person.gateway.web.request.CreatePersonRequest
 import net.devh.boot.grpc.client.inject.GrpcClient
 import org.springframework.stereotype.Component
 
 interface PersonGrpcClient {
     fun getPerson(id: Long): Person
-    fun createPerson(request: CreatePersonRequest): Person
+    fun createPerson(request: PersonCreateRequest): Person
 
     @Component
     class PersonGrpcClientImpl : PersonGrpcClient {
@@ -23,9 +23,8 @@ interface PersonGrpcClient {
             getPersonProtoRequest(id)
                 .let { personClient.getPerson(it).toDomain() }
 
-        override fun createPerson(request: CreatePersonRequest): Person =
-            request.toPersonGrpc()
-                .let { personClient.createPerson(it) }
+        override fun createPerson(request: PersonCreateRequest): Person =
+            request.let { personClient.createPerson(it) }
                 .toDomain()
 
         private fun getPersonProtoRequest(id: Long): PersonGetRequest? =

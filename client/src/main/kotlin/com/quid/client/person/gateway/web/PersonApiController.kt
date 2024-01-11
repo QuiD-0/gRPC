@@ -17,6 +17,6 @@ class PersonApiController(
 
     @PostMapping
     fun createPerson(@RequestBody request: CreatePersonRequest): Person =
-        personGrpcClient.createPerson(request)
+        personGrpcClient.createPerson(request.toPersonGrpc())
 
 }
