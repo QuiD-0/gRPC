@@ -6,11 +6,11 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
     value = "by gRPC proto compiler (version 1.58.0)",
     comments = "Source: personService.proto")
 @io.grpc.stub.annotations.GrpcGenerated
-public final class GetPersonUseCaseGrpc {
+public final class PersonUseCaseGrpc {
 
-  private GetPersonUseCaseGrpc() {}
+  private PersonUseCaseGrpc() {}
 
-  public static final java.lang.String SERVICE_NAME = "GetPersonUseCase";
+  public static final java.lang.String SERVICE_NAME = "PersonUseCase";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
@@ -24,10 +24,10 @@ public final class GetPersonUseCaseGrpc {
   public static io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
       PersonService.PersonProto> getGetPersonMethod() {
     io.grpc.MethodDescriptor<PersonService.PersonGetRequest, PersonService.PersonProto> getGetPersonMethod;
-    if ((getGetPersonMethod = GetPersonUseCaseGrpc.getGetPersonMethod) == null) {
-      synchronized (GetPersonUseCaseGrpc.class) {
-        if ((getGetPersonMethod = GetPersonUseCaseGrpc.getGetPersonMethod) == null) {
-          GetPersonUseCaseGrpc.getGetPersonMethod = getGetPersonMethod =
+    if ((getGetPersonMethod = PersonUseCaseGrpc.getGetPersonMethod) == null) {
+      synchronized (PersonUseCaseGrpc.class) {
+        if ((getGetPersonMethod = PersonUseCaseGrpc.getGetPersonMethod) == null) {
+          PersonUseCaseGrpc.getGetPersonMethod = getGetPersonMethod =
               io.grpc.MethodDescriptor.<PersonService.PersonGetRequest, PersonService.PersonProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getPerson"))
@@ -36,7 +36,7 @@ public final class GetPersonUseCaseGrpc {
                   PersonService.PersonGetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   PersonService.PersonProto.getDefaultInstance()))
-              .setSchemaDescriptor(new GetPersonUseCaseMethodDescriptorSupplier("getPerson"))
+              .setSchemaDescriptor(new PersonUseCaseMethodDescriptorSupplier("getPerson"))
               .build();
         }
       }
@@ -55,10 +55,10 @@ public final class GetPersonUseCaseGrpc {
   public static io.grpc.MethodDescriptor<PersonService.PersonGetRequest,
       PersonService.PersonProto> getGetPersonByIdMethod() {
     io.grpc.MethodDescriptor<PersonService.PersonGetRequest, PersonService.PersonProto> getGetPersonByIdMethod;
-    if ((getGetPersonByIdMethod = GetPersonUseCaseGrpc.getGetPersonByIdMethod) == null) {
-      synchronized (GetPersonUseCaseGrpc.class) {
-        if ((getGetPersonByIdMethod = GetPersonUseCaseGrpc.getGetPersonByIdMethod) == null) {
-          GetPersonUseCaseGrpc.getGetPersonByIdMethod = getGetPersonByIdMethod =
+    if ((getGetPersonByIdMethod = PersonUseCaseGrpc.getGetPersonByIdMethod) == null) {
+      synchronized (PersonUseCaseGrpc.class) {
+        if ((getGetPersonByIdMethod = PersonUseCaseGrpc.getGetPersonByIdMethod) == null) {
+          PersonUseCaseGrpc.getGetPersonByIdMethod = getGetPersonByIdMethod =
               io.grpc.MethodDescriptor.<PersonService.PersonGetRequest, PersonService.PersonProto>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getPersonById"))
@@ -67,7 +67,7 @@ public final class GetPersonUseCaseGrpc {
                   PersonService.PersonGetRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   PersonService.PersonProto.getDefaultInstance()))
-              .setSchemaDescriptor(new GetPersonUseCaseMethodDescriptorSupplier("getPersonById"))
+              .setSchemaDescriptor(new PersonUseCaseMethodDescriptorSupplier("getPersonById"))
               .build();
         }
       }
@@ -75,48 +75,79 @@ public final class GetPersonUseCaseGrpc {
     return getGetPersonByIdMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<PersonService.PersonCreateRequest,
+      PersonService.PersonProto> getCreatePersonMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "createPerson",
+      requestType = PersonService.PersonCreateRequest.class,
+      responseType = PersonService.PersonProto.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<PersonService.PersonCreateRequest,
+      PersonService.PersonProto> getCreatePersonMethod() {
+    io.grpc.MethodDescriptor<PersonService.PersonCreateRequest, PersonService.PersonProto> getCreatePersonMethod;
+    if ((getCreatePersonMethod = PersonUseCaseGrpc.getCreatePersonMethod) == null) {
+      synchronized (PersonUseCaseGrpc.class) {
+        if ((getCreatePersonMethod = PersonUseCaseGrpc.getCreatePersonMethod) == null) {
+          PersonUseCaseGrpc.getCreatePersonMethod = getCreatePersonMethod =
+              io.grpc.MethodDescriptor.<PersonService.PersonCreateRequest, PersonService.PersonProto>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "createPerson"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PersonService.PersonCreateRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PersonService.PersonProto.getDefaultInstance()))
+              .setSchemaDescriptor(new PersonUseCaseMethodDescriptorSupplier("createPerson"))
+              .build();
+        }
+      }
+    }
+    return getCreatePersonMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
-  public static GetPersonUseCaseStub newStub(io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GetPersonUseCaseStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<GetPersonUseCaseStub>() {
+  public static PersonUseCaseStub newStub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PersonUseCaseStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<PersonUseCaseStub>() {
         @java.lang.Override
-        public GetPersonUseCaseStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new GetPersonUseCaseStub(channel, callOptions);
+        public PersonUseCaseStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new PersonUseCaseStub(channel, callOptions);
         }
       };
-    return GetPersonUseCaseStub.newStub(factory, channel);
+    return PersonUseCaseStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static GetPersonUseCaseBlockingStub newBlockingStub(
+  public static PersonUseCaseBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GetPersonUseCaseBlockingStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<GetPersonUseCaseBlockingStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<PersonUseCaseBlockingStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<PersonUseCaseBlockingStub>() {
         @java.lang.Override
-        public GetPersonUseCaseBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new GetPersonUseCaseBlockingStub(channel, callOptions);
+        public PersonUseCaseBlockingStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new PersonUseCaseBlockingStub(channel, callOptions);
         }
       };
-    return GetPersonUseCaseBlockingStub.newStub(factory, channel);
+    return PersonUseCaseBlockingStub.newStub(factory, channel);
   }
 
   /**
    * Creates a new ListenableFuture-style stub that supports unary calls on the service
    */
-  public static GetPersonUseCaseFutureStub newFutureStub(
+  public static PersonUseCaseFutureStub newFutureStub(
       io.grpc.Channel channel) {
-    io.grpc.stub.AbstractStub.StubFactory<GetPersonUseCaseFutureStub> factory =
-      new io.grpc.stub.AbstractStub.StubFactory<GetPersonUseCaseFutureStub>() {
+    io.grpc.stub.AbstractStub.StubFactory<PersonUseCaseFutureStub> factory =
+      new io.grpc.stub.AbstractStub.StubFactory<PersonUseCaseFutureStub>() {
         @java.lang.Override
-        public GetPersonUseCaseFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-          return new GetPersonUseCaseFutureStub(channel, callOptions);
+        public PersonUseCaseFutureStub newStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+          return new PersonUseCaseFutureStub(channel, callOptions);
         }
       };
-    return GetPersonUseCaseFutureStub.newStub(factory, channel);
+    return PersonUseCaseFutureStub.newStub(factory, channel);
   }
 
   /**
@@ -136,33 +167,40 @@ public final class GetPersonUseCaseGrpc {
         io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPersonByIdMethod(), responseObserver);
     }
-  }
 
-  /**
-   * Base class for the server implementation of the service GetPersonUseCase.
-   */
-  public static abstract class GetPersonUseCaseImplBase
-      implements io.grpc.BindableService, AsyncService {
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return GetPersonUseCaseGrpc.bindService(this);
+    /**
+     */
+    default void createPerson(PersonService.PersonCreateRequest request,
+        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePersonMethod(), responseObserver);
     }
   }
 
   /**
-   * A stub to allow clients to do asynchronous rpc calls to service GetPersonUseCase.
+   * Base class for the server implementation of the service PersonUseCase.
    */
-  public static final class GetPersonUseCaseStub
-      extends io.grpc.stub.AbstractAsyncStub<GetPersonUseCaseStub> {
-    private GetPersonUseCaseStub(
+  public static abstract class PersonUseCaseImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return PersonUseCaseGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service PersonUseCase.
+   */
+  public static final class PersonUseCaseStub
+      extends io.grpc.stub.AbstractAsyncStub<PersonUseCaseStub> {
+    private PersonUseCaseStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GetPersonUseCaseStub build(
+    protected PersonUseCaseStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new GetPersonUseCaseStub(channel, callOptions);
+      return new PersonUseCaseStub(channel, callOptions);
     }
 
     /**
@@ -180,22 +218,30 @@ public final class GetPersonUseCaseGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetPersonByIdMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void createPerson(PersonService.PersonCreateRequest request,
+        io.grpc.stub.StreamObserver<PersonService.PersonProto> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreatePersonMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
-   * A stub to allow clients to do synchronous rpc calls to service GetPersonUseCase.
+   * A stub to allow clients to do synchronous rpc calls to service PersonUseCase.
    */
-  public static final class GetPersonUseCaseBlockingStub
-      extends io.grpc.stub.AbstractBlockingStub<GetPersonUseCaseBlockingStub> {
-    private GetPersonUseCaseBlockingStub(
+  public static final class PersonUseCaseBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<PersonUseCaseBlockingStub> {
+    private PersonUseCaseBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GetPersonUseCaseBlockingStub build(
+    protected PersonUseCaseBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new GetPersonUseCaseBlockingStub(channel, callOptions);
+      return new PersonUseCaseBlockingStub(channel, callOptions);
     }
 
     /**
@@ -211,22 +257,29 @@ public final class GetPersonUseCaseGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetPersonByIdMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public PersonService.PersonProto createPerson(PersonService.PersonCreateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePersonMethod(), getCallOptions(), request);
+    }
   }
 
   /**
-   * A stub to allow clients to do ListenableFuture-style rpc calls to service GetPersonUseCase.
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service PersonUseCase.
    */
-  public static final class GetPersonUseCaseFutureStub
-      extends io.grpc.stub.AbstractFutureStub<GetPersonUseCaseFutureStub> {
-    private GetPersonUseCaseFutureStub(
+  public static final class PersonUseCaseFutureStub
+      extends io.grpc.stub.AbstractFutureStub<PersonUseCaseFutureStub> {
+    private PersonUseCaseFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected GetPersonUseCaseFutureStub build(
+    protected PersonUseCaseFutureStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
-      return new GetPersonUseCaseFutureStub(channel, callOptions);
+      return new PersonUseCaseFutureStub(channel, callOptions);
     }
 
     /**
@@ -244,10 +297,19 @@ public final class GetPersonUseCaseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetPersonByIdMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<PersonService.PersonProto> createPerson(
+        PersonService.PersonCreateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreatePersonMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PERSON = 0;
   private static final int METHODID_GET_PERSON_BY_ID = 1;
+  private static final int METHODID_CREATE_PERSON = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -272,6 +334,10 @@ public final class GetPersonUseCaseGrpc {
           break;
         case METHODID_GET_PERSON_BY_ID:
           serviceImpl.getPersonById((PersonService.PersonGetRequest) request,
+              (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
+          break;
+        case METHODID_CREATE_PERSON:
+          serviceImpl.createPerson((PersonService.PersonCreateRequest) request,
               (io.grpc.stub.StreamObserver<PersonService.PersonProto>) responseObserver);
           break;
         default:
@@ -306,12 +372,19 @@ public final class GetPersonUseCaseGrpc {
               PersonService.PersonGetRequest,
               PersonService.PersonProto>(
                 service, METHODID_GET_PERSON_BY_ID)))
+        .addMethod(
+          getCreatePersonMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              PersonService.PersonCreateRequest,
+              PersonService.PersonProto>(
+                service, METHODID_CREATE_PERSON)))
         .build();
   }
 
-  private static abstract class GetPersonUseCaseBaseDescriptorSupplier
+  private static abstract class PersonUseCaseBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
-    GetPersonUseCaseBaseDescriptorSupplier() {}
+    PersonUseCaseBaseDescriptorSupplier() {}
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
@@ -320,21 +393,21 @@ public final class GetPersonUseCaseGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
-      return getFileDescriptor().findServiceByName("GetPersonUseCase");
+      return getFileDescriptor().findServiceByName("PersonUseCase");
     }
   }
 
-  private static final class GetPersonUseCaseFileDescriptorSupplier
-      extends GetPersonUseCaseBaseDescriptorSupplier {
-    GetPersonUseCaseFileDescriptorSupplier() {}
+  private static final class PersonUseCaseFileDescriptorSupplier
+      extends PersonUseCaseBaseDescriptorSupplier {
+    PersonUseCaseFileDescriptorSupplier() {}
   }
 
-  private static final class GetPersonUseCaseMethodDescriptorSupplier
-      extends GetPersonUseCaseBaseDescriptorSupplier
+  private static final class PersonUseCaseMethodDescriptorSupplier
+      extends PersonUseCaseBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
     private final java.lang.String methodName;
 
-    GetPersonUseCaseMethodDescriptorSupplier(java.lang.String methodName) {
+    PersonUseCaseMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -349,13 +422,14 @@ public final class GetPersonUseCaseGrpc {
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     io.grpc.ServiceDescriptor result = serviceDescriptor;
     if (result == null) {
-      synchronized (GetPersonUseCaseGrpc.class) {
+      synchronized (PersonUseCaseGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new GetPersonUseCaseFileDescriptorSupplier())
+              .setSchemaDescriptor(new PersonUseCaseFileDescriptorSupplier())
               .addMethod(getGetPersonMethod())
               .addMethod(getGetPersonByIdMethod())
+              .addMethod(getCreatePersonMethod())
               .build();
         }
       }

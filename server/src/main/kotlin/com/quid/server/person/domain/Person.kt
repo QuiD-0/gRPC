@@ -1,24 +1,23 @@
-package com.quid.client.person.domain
+package com.quid.server.person.domain
 
 import PersonService.PersonProto
 
 
 data class Person(
-    val id: Long,
+    val id: Long? = null,
     val name: String,
     val email: String,
     val phones: List<PhoneNumber>
 ) {
-    constructor(id: Long, name: String, email: String, phoneNumber: String) : this(
-        id = id,
-        name = name,
-        email = email,
-        phones = listOf(PhoneNumber(phoneNumber))
+    constructor(request: PersonService.PersonCreateRequest) : this(
+        name = request.name,
+        email = request.email,
+        phones = request.phoneNumbersList.map { PhoneNumber(it) }
     )
 
     fun toPersonGrpc(): PersonProto {
         return PersonProto.newBuilder()
-            .setId(id)
+            .setId(id!!)
             .setName(name)
             .setEmail(email)
             .addAllPhones(phones.map { it.toPhoneNumberGrpc() })

@@ -3289,12 +3289,11 @@ public final class PersonService {
       "\014phoneNumbers\030\004 \003(\t\"Y\n\013PersonProto\022\014\n\004na" +
       "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022!\n\006p" +
       "hones\030\004 \003(\0132\021.PhoneNumberProto\"\"\n\020PhoneN" +
-      "umberProto\022\016\n\006number\030\001 \001(\t2r\n\020GetPersonU" +
-      "seCase\022,\n\tgetPerson\022\021.PersonGetRequest\032\014" +
-      ".PersonProto\0220\n\rgetPersonById\022\021.PersonGe" +
-      "tRequest\032\014.PersonProto2A\n\023CreatePersonUs" +
-      "eCase\022*\n\014createPerson\022\014.PersonProto\032\014.Pe" +
-      "rsonProtob\006proto3"
+      "umberProto\022\016\n\006number\030\001 \001(\t2\243\001\n\rPersonUse" +
+      "Case\022,\n\tgetPerson\022\021.PersonGetRequest\032\014.P" +
+      "ersonProto\0220\n\rgetPersonById\022\021.PersonGetR" +
+      "equest\032\014.PersonProto\0222\n\014createPerson\022\024.P" +
+      "ersonCreateRequest\032\014.PersonProtob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -4,7 +4,7 @@ import PersonService.PersonProto
 
 
 data class Person(
-    val id: Long,
+    val id: Long? = null,
     val name: String,
     val email: String,
     val phones: List<PhoneNumber>
@@ -12,7 +12,7 @@ data class Person(
 
     fun toPersonGrpc(): PersonProto {
         return PersonProto.newBuilder()
-            .setId(id)
+            .setId(id!!)
             .setName(name)
             .setEmail(email)
             .addAllPhones(phones.map { it.toPhoneNumberGrpc() })

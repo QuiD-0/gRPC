@@ -1,4 +1,4 @@
-package com.quid.client.person.domain
+package com.quid.server.person.domain
 
 import PersonService.PhoneNumberProto
 

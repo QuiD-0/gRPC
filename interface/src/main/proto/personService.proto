@@ -1,12 +1,9 @@
 syntax = "proto3";
 
-service GetPersonUseCase {
+service PersonUseCase {
     rpc getPerson (PersonGetRequest) returns (PersonProto);
     rpc getPersonById (PersonGetRequest) returns (PersonProto);
-}
-
-service CreatePersonUseCase {
-    rpc createPerson (PersonProto) returns (PersonProto);
+    rpc createPerson (PersonCreateRequest) returns (PersonProto);
 }
 
 message PersonGetRequest {
