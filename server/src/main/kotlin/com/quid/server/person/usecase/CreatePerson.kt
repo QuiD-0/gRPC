@@ -5,18 +5,14 @@ import com.quid.server.person.domain.Person
 import com.quid.server.person.gateway.repository.PersonRepository
 import org.springframework.stereotype.Service
 
-interface PersonUseCase {
-    fun getPerson(id: Long): Person
-    fun createPerson(request: PersonCreateRequest): Person
+fun interface CreatePerson {
+    operator fun invoke(request: PersonCreateRequest): Person
 
     @Service
-    class PersonUseCaseImpl(
+    class CreatePersonUseCase(
         private val personRepository: PersonRepository
-    ) : PersonUseCase {
-
-        override fun getPerson(id: Long) = personRepository.findById(id)
-
-        override fun createPerson(request: PersonCreateRequest): Person =
+    ) : CreatePerson {
+        override fun invoke(request: PersonCreateRequest): Person =
             Person(request)
                 .let { personRepository.save(it) }
     }
