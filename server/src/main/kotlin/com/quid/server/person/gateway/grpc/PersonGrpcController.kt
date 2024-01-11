@@ -16,7 +16,7 @@ class PersonGrpcController(
         request: PersonService.PersonGetRequest,
         responseObserver: StreamObserver<PersonProto>
     ) {
-        personUseCase.getPerson(request.id.toLong())
+        personUseCase.getPerson(request.id)
             .toPersonGrpc()
             .let {
                 responseObserver.onNext(it)

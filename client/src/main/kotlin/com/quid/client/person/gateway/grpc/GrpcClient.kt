@@ -9,7 +9,7 @@ import net.devh.boot.grpc.client.inject.GrpcClient
 import org.springframework.stereotype.Component
 
 interface PersonGrpcClient {
-    fun getPerson(id: String): Person
+    fun getPerson(id: Long): Person
     fun createPerson(request: CreatePersonRequest): Person
 
     @Component
@@ -19,7 +19,7 @@ interface PersonGrpcClient {
         private lateinit var personClient: PersonUseCaseBlockingStub
 
 
-        override fun getPerson(id: String): Person =
+        override fun getPerson(id: Long): Person =
             getPersonProtoRequest(id)
                 .let { personClient.getPerson(it).toDomain() }
 
@@ -28,7 +28,7 @@ interface PersonGrpcClient {
                 .let { personClient.createPerson(it) }
                 .toDomain()
 
-        private fun getPersonProtoRequest(id: String): PersonGetRequest? =
+        private fun getPersonProtoRequest(id: Long): PersonGetRequest? =
             PersonGetRequest.newBuilder()
                 .setId(id)
                 .build()

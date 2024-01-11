@@ -17,16 +17,10 @@ public final class PersonService {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string id = 1;</code>
+     * <code>uint64 id = 1;</code>
      * @return The id.
      */
-    java.lang.String getId();
-    /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
+    long getId();
   }
   /**
    * Protobuf type {@code PersonGetRequest}
@@ -41,7 +35,6 @@ public final class PersonService {
       super(builder);
     }
     private PersonGetRequest() {
-      id_ = "";
     }
 
     @java.lang.Override
@@ -65,42 +58,14 @@ public final class PersonService {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
+    private long id_ = 0L;
     /**
-     * <code>string id = 1;</code>
+     * <code>uint64 id = 1;</code>
      * @return The id.
      */
     @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 1;</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getId() {
+      return id_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -117,8 +82,8 @@ public final class PersonService {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      if (id_ != 0L) {
+        output.writeUInt64(1, id_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -129,8 +94,9 @@ public final class PersonService {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      if (id_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, id_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -147,8 +113,8 @@ public final class PersonService {
       }
       PersonService.PersonGetRequest other = (PersonService.PersonGetRequest) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
+      if (getId()
+          != other.getId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -161,7 +127,8 @@ public final class PersonService {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getId());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -293,7 +260,7 @@ public final class PersonService {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = "";
+        id_ = 0L;
         return this;
       }
 
@@ -376,10 +343,8 @@ public final class PersonService {
 
       public Builder mergeFrom(PersonService.PersonGetRequest other) {
         if (other == PersonService.PersonGetRequest.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          bitField0_ |= 0x00000001;
-          onChanged();
+        if (other.getId() != 0L) {
+          setId(other.getId());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -407,11 +372,11 @@ public final class PersonService {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
+              case 8: {
+                id_ = input.readUInt64();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
+              } // case 8
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -429,74 +394,34 @@ public final class PersonService {
       }
       private int bitField0_;
 
-      private java.lang.Object id_ = "";
+      private long id_ ;
       /**
-       * <code>string id = 1;</code>
+       * <code>uint64 id = 1;</code>
        * @return The id.
        */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getId() {
+        return id_;
       }
       /**
-       * <code>string id = 1;</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 1;</code>
+       * <code>uint64 id = 1;</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+      public Builder setId(long value) {
+
         id_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>string id = 1;</code>
+       * <code>uint64 id = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        id_ = getDefaultInstance().getId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1;</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        id_ = value;
-        bitField0_ |= 0x00000001;
+        id_ = 0L;
         onChanged();
         return this;
       }
@@ -3284,7 +3209,7 @@ public final class PersonService {
   static {
     java.lang.String[] descriptorData = {
       "\n\023personService.proto\"\036\n\020PersonGetReques" +
-      "t\022\n\n\002id\030\001 \001(\t\"T\n\023PersonCreateRequest\022\014\n\004" +
+      "t\022\n\n\002id\030\001 \001(\004\"T\n\023PersonCreateRequest\022\014\n\004" +
       "name\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022\024\n" +
       "\014phoneNumbers\030\004 \003(\t\"Y\n\013PersonProto\022\014\n\004na" +
       "me\030\001 \001(\t\022\n\n\002id\030\002 \001(\004\022\r\n\005email\030\003 \001(\t\022!\n\006p" +

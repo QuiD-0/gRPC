@@ -12,7 +12,7 @@ class PersonApiController(
 ) {
 
     @GetMapping("/{id}")
-    fun getPerson(@PathVariable id: String): Person =
+    fun getPerson(@PathVariable id: Long): Person =
         personGrpcClient.getPerson(id)
 
     @PostMapping
