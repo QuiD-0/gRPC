@@ -1,6 +1,5 @@
 package com.quid.client.person.gateway.web
 
-import com.google.protobuf.Empty
 import com.quid.client.person.domain.Person
 import com.quid.client.person.gateway.grpc.PersonGrpcClient
 import com.quid.client.person.gateway.web.request.CreatePersonRequest
