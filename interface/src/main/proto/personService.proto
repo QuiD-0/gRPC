@@ -5,9 +5,14 @@ service PersonUseCase {
     rpc getPerson (google.protobuf.Empty) returns (stream PersonProto);
     rpc getPersonById (PersonGetRequest) returns (PersonProto);
     rpc createPerson (PersonCreateRequest) returns (google.protobuf.Empty);
+    rpc deletePerson (PersonDeleteRequest) returns (google.protobuf.Empty);
 }
 
 message PersonGetRequest {
+    uint64 id = 1;
+}
+
+message PersonDeleteRequest {
     uint64 id = 1;
 }
 

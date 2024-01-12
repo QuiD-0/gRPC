@@ -106,6 +106,37 @@ public final class PersonUseCaseGrpc {
     return getCreatePersonMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<PersonService.PersonDeleteRequest,
+      com.google.protobuf.Empty> getDeletePersonMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "deletePerson",
+      requestType = PersonService.PersonDeleteRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<PersonService.PersonDeleteRequest,
+      com.google.protobuf.Empty> getDeletePersonMethod() {
+    io.grpc.MethodDescriptor<PersonService.PersonDeleteRequest, com.google.protobuf.Empty> getDeletePersonMethod;
+    if ((getDeletePersonMethod = PersonUseCaseGrpc.getDeletePersonMethod) == null) {
+      synchronized (PersonUseCaseGrpc.class) {
+        if ((getDeletePersonMethod = PersonUseCaseGrpc.getDeletePersonMethod) == null) {
+          PersonUseCaseGrpc.getDeletePersonMethod = getDeletePersonMethod =
+              io.grpc.MethodDescriptor.<PersonService.PersonDeleteRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "deletePerson"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  PersonService.PersonDeleteRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new PersonUseCaseMethodDescriptorSupplier("deletePerson"))
+              .build();
+        }
+      }
+    }
+    return getDeletePersonMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -174,6 +205,13 @@ public final class PersonUseCaseGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreatePersonMethod(), responseObserver);
     }
+
+    /**
+     */
+    default void deletePerson(PersonService.PersonDeleteRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeletePersonMethod(), responseObserver);
+    }
   }
 
   /**
@@ -226,6 +264,14 @@ public final class PersonUseCaseGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreatePersonMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void deletePerson(PersonService.PersonDeleteRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeletePersonMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -265,6 +311,13 @@ public final class PersonUseCaseGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreatePersonMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.google.protobuf.Empty deletePerson(PersonService.PersonDeleteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePersonMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -298,11 +351,20 @@ public final class PersonUseCaseGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreatePersonMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deletePerson(
+        PersonService.PersonDeleteRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeletePersonMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_PERSON = 0;
   private static final int METHODID_GET_PERSON_BY_ID = 1;
   private static final int METHODID_CREATE_PERSON = 2;
+  private static final int METHODID_DELETE_PERSON = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -331,6 +393,10 @@ public final class PersonUseCaseGrpc {
           break;
         case METHODID_CREATE_PERSON:
           serviceImpl.createPerson((PersonService.PersonCreateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_DELETE_PERSON:
+          serviceImpl.deletePerson((PersonService.PersonDeleteRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
@@ -372,6 +438,13 @@ public final class PersonUseCaseGrpc {
               PersonService.PersonCreateRequest,
               com.google.protobuf.Empty>(
                 service, METHODID_CREATE_PERSON)))
+        .addMethod(
+          getDeletePersonMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              PersonService.PersonDeleteRequest,
+              com.google.protobuf.Empty>(
+                service, METHODID_DELETE_PERSON)))
         .build();
   }
 
@@ -423,6 +496,7 @@ public final class PersonUseCaseGrpc {
               .addMethod(getGetPersonMethod())
               .addMethod(getGetPersonByIdMethod())
               .addMethod(getCreatePersonMethod())
+              .addMethod(getDeletePersonMethod())
               .build();
         }
       }
