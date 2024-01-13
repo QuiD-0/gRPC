@@ -24,4 +24,9 @@ class PersonApiController(
         personGrpcClient.createPerson(request.toPersonGrpc())
     }
 
+    @DeleteMapping("/{id}")
+    fun deletePerson(@PathVariable id: Long){
+        personGrpcClient.deletePerson(id)
+    }
+
 }
