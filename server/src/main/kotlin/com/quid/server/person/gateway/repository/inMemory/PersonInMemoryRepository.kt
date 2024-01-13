@@ -21,4 +21,8 @@ class PersonInMemoryRepository {
     fun findAll(): List<Person> {
         return persons.values.toList()
     }
+
+    fun deleteById(id: Long) {
+        persons.remove(id)
+    }
 }

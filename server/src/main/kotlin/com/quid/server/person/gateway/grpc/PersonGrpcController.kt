@@ -4,6 +4,7 @@ import PersonService.*
 import PersonUseCaseGrpc.PersonUseCaseImplBase
 import com.google.protobuf.Empty
 import com.quid.server.person.usecase.CreatePerson
+import com.quid.server.person.usecase.DeletePerson
 import com.quid.server.person.usecase.FindPerson
 import io.grpc.stub.StreamObserver
 import net.devh.boot.grpc.server.service.GrpcService
@@ -11,7 +12,8 @@ import net.devh.boot.grpc.server.service.GrpcService
 @GrpcService
 class PersonGrpcController(
     private val findPerson: FindPerson,
-    private val createPerson: CreatePerson
+    private val createPerson: CreatePerson,
+    private val deletePerson: DeletePerson
 ) : PersonUseCaseImplBase() {
 
     override fun getPerson(request: Empty, responseObserver: StreamObserver<PersonProto>) {
@@ -33,6 +35,12 @@ class PersonGrpcController(
         responseObserver: StreamObserver<Empty>
     ) {
         createPerson(request)
+            .also { responseObserver.onNext(Empty.getDefaultInstance()) }
+            .also { responseObserver.onCompleted() }
+    }
+
+    override fun deletePerson(request: PersonDeleteRequest?, responseObserver: StreamObserver<Empty>) {
+        deletePerson(request!!.id)
             .also { responseObserver.onNext(Empty.getDefaultInstance()) }
             .also { responseObserver.onCompleted() }
     }

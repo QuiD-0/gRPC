@@ -9,21 +9,23 @@ interface PersonRepository {
     fun save(person :Person): Person
     fun findById(id: Long): Person
     fun findAll(): List<Person>
+    fun deleteById(id: Long)
 
     @Repository
     class PersonRepositoryImpl(
         private val inMemoryRepository: PersonInMemoryRepository
     ) : PersonRepository {
-        override fun save(person: Person): Person {
-            return inMemoryRepository.save(person)
-        }
+        override fun save(person: Person): Person =
+            inMemoryRepository.save(person)
 
-        override fun findById(id: Long): Person {
-            return inMemoryRepository.findById(id)
-        }
+        override fun findById(id: Long): Person =
+            inMemoryRepository.findById(id)
 
-        override fun findAll(): List<Person> {
-            return inMemoryRepository.findAll()
+        override fun findAll(): List<Person> =
+            inMemoryRepository.findAll()
+
+        override fun deleteById(id: Long) {
+            inMemoryRepository.deleteById(id)
         }
     }
 }
